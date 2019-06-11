@@ -1,0 +1,18 @@
+<script>
+        var a = {
+            name:"Russia",
+            age:1000,
+            foreve: true,
+            list:["11","12","13","14"],
+            classcity:{
+                city:{
+                    title:"Moscow",
+                    count: 99555
+                }
+            }
+        }
+
+        var b = {...a};
+        b.classcity = {...a.classcity};
+        b.classcity.city = {...a.classcity.city};
+</script>

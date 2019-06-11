@@ -1,0 +1,16 @@
+.nav{
+  grid-area: n;
+  height: 100%;
+  background-color: #deb887;
+  padding:12px;
+}
+
+.point{
+  color:darkgreen;
+  display: block;
+  text-decoration: none;
+}
+
+.current{
+  color:rgb(26, 44, 26); 
+}

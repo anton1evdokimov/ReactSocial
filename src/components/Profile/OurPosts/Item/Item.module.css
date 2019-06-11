@@ -1,0 +1,17 @@
+.nav{
+  grid-area: n;
+  background-color: #deb887
+}
+
+.point{
+  color:darkgreen;
+}
+
+.current{
+  color:darkseagreen; 
+}
+
+.avatar{
+width: 50px;
+border-radius: 9px;
+}

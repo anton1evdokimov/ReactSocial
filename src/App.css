@@ -1,44 +1,36 @@
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 12vmin;
-  pointer-events: none;
-  color: #deb887;
+    animation: App-logo-spin infinite 20s linear;
+    height: 12vmin;
+    pointer-events: none;
+    color: #deb887;
 }
 
-.App-wrapper {  
-  display: grid;
-  width: 1200px;
-  margin: 0 auto;
-  grid-template-areas: "h h"
-                        "n c";
-  grid-template-rows: 60px 1fr;
-  grid-template-columns: 2fr 10fr;
-  grid-gap: 9px;
+*{
+    outline: none;
+}
 
+.App-wrapper {
+    display: grid;
+    width: 1200px;
+    margin: 0 auto;
+    grid-template-areas: "h h" "n c";
+    grid-template-rows: 60px 1fr;
+    grid-template-columns: 150px 10fr;
+    grid-gap: 9px;
+    height: 90vh;
 }
-.header{
-  grid-area: h;
-  background-color: green;
+
+.content {
+    grid-area: c;
+    background-color: rgb(247, 202, 144);
 }
-.nav{
-  grid-area: n;
-  background-color: #deb887
-}
-.content{
-  grid-area: c;
-}
-.imgMain{
-  background-image: url('http://brightwallpapers.com.ua/Uploads/16-10-2014/4b20d4b2-acd6-432b-b349-519ce31f06f0/ee6e1323b4b3d20bdc97bec5d5b3b55b.jpg');
-  background-position: 0px -103px;
-  background-size: cover;
-  height: 300px;
-}
+
 
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }

@@ -1,0 +1,9 @@
+.imgMain {
+    background-image: url('../../img/su-35.jpg');
+    background-position: 0px -103px;
+    background-size: cover;
+    height: 300px;    
+}
+.content{
+    padding: 12px;
+}

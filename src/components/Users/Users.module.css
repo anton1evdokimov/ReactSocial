@@ -1,0 +1,55 @@
+.main{
+ padding: 18px;
+ display: grid;
+ 
+ grid-template-areas: "c" "b";
+ 
+ grid-template-columns: 12fr;
+}
+.pages{
+grid-area: c;
+}
+
+.block{
+    grid-area: b;
+    display: flex;
+    flex-wrap: wrap;
+    width: 1005px;
+}
+.leftBlock{
+   border:1px solid rgb(84, 116, 10);
+    background-color: rgb(253, 249, 249);
+    width: 300px;
+    padding: 9px;
+    margin: 3px auto;
+    border-radius: 3px;
+    display: flex;
+}
+.rightBlock{
+    width: 500px;
+    padding: 9px;
+    margin: 3px 9px;
+}
+
+.selected{
+    font-weight: 900;   
+}
+
+.paginator{
+    border-radius: 15px;
+    cursor: pointer;
+    margin: 0 5px;
+    padding: 0 3px;
+}
+
+button{
+    width: 90px;
+    margin: 3px 9px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.userPhoto{
+    height: 40px;
+    border-radius: 12px;
+}
