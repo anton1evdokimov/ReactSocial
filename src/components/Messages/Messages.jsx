@@ -5,7 +5,7 @@ import Dialog from "./Dialog/Dialog";
 
 const Messages = props => {
 
-    let updateNewMessage = e => {      
+    let updateNewMessage = e => {
         props.updateMessage(e.currentTarget.value);
     }
     let addMessage = () => {

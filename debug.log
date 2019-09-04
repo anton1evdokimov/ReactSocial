@@ -5,3 +5,10 @@
 [0518/115448.295:ERROR:process_info.cc(359)] UncheckedAllocate
 [0608/081450.050:ERROR:process_info.cc(359)] UncheckedAllocate
 [0608/084519.024:ERROR:process_info.cc(359)] UncheckedAllocate
+[0612/114104.835:ERROR:process_info.cc(359)] UncheckedAllocate
+[0612/114118.507:ERROR:process_info.cc(359)] UncheckedAllocate
+[0612/114810.535:ERROR:process_info.cc(359)] UncheckedAllocate
+[0612/114814.635:ERROR:process_info.cc(359)] UncheckedAllocate
+[0612/161818.336:ERROR:process_info.cc(359)] UncheckedAllocate
+[0612/161935.289:ERROR:process_info.cc(359)] UncheckedAllocate
+[0612/165210.260:ERROR:process_info.cc(359)] UncheckedAllocate

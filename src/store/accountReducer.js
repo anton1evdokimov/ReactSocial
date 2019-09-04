@@ -1,7 +1,9 @@
+import { authAPI } from "../api/api";
+
 const SET_ACCOUNT = "SET_ACCOUNT";
 const SET_IS_FETCHING = "SET_IS_FETCHING";
 
-export const setAccount = (id, email, login) => ({ type: SET_ACCOUNT, id, email, login });
+const setAccount = (id, email, login) => ({ type: SET_ACCOUNT, id, email, login });
 
 export const setIsFetching = isFetching => ({ type: SET_IS_FETCHING, isFetching });
 
@@ -10,7 +12,7 @@ const initState = {
         email: null,
         login: null,
         isAuth: false,
-        isFetching: false        
+        isFetching: false
 };
 
 const accountReducer = (state = initState, action) => {
@@ -18,21 +20,31 @@ const accountReducer = (state = initState, action) => {
                 case SET_ACCOUNT: {
                         return {
                                 ...state,
-                                id:action.id,
-                                email:action.email,
+                                id: action.id,
+                                email: action.email,
                                 login: action.login,
                                 isAuth: true
                         };
-                }               
+                }
                 case SET_IS_FETCHING: {
                         return {
                                 ...state,
                                 isFetching: action.isFetching
                         };
                 }
-                
+
                 default: return state;
         }
+}
+export const getAccount = () => (dispatch) => {
+        dispatch(setIsFetching(true));
+        authAPI.getMe().then(res => {
+                if (res.resultCode === 0) {
+                        let { id, email, login } = res.data;
+                        dispatch(setAccount(id, email, login));
+                        dispatch(setIsFetching(false));
+                }
+        });
 }
 
 export default accountReducer;

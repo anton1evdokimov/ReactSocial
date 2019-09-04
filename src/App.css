@@ -9,7 +9,7 @@
     outline: none;
 }
 
-.App-wrapper {
+#root {
     display: grid;
     width: 1200px;
     margin: 0 auto;

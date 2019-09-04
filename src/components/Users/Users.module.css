@@ -36,10 +36,13 @@ grid-area: c;
 }
 
 .paginator{
+    height: 50px;
     border-radius: 15px;
     cursor: pointer;
-    margin: 0 5px;
-    padding: 0 3px;
+}
+
+.paginator a{
+    color: black;
 }
 
 button{

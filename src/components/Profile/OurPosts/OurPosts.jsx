@@ -1,23 +1,26 @@
 import React from "react"
 import st from './OurPosts.module.css'
 import Item from "./Item/Item";
+import {Field, reduxForm} from 'redux-form';
 
-const OurPosts = props => {
-  //let newPost = React.createRef();
-  const addPs = () => {
-    props.addPs();
+let AddPost = prpos => {
+  return <form className={st.add} onSubmit={prpos.handleSubmit}>
+  <Field component='textarea' className={st.addPost} name='newPostText' />
+  <button className={st.addButton}>Добавить пост</button>
+</form>
+}
+
+const AddPostForm = reduxForm({form:'addPost'})(AddPost);
+
+export default props => {
+  const addPs = ({newPostText}) => {
+    props.addPs(newPostText);
   }
 
-  const updatePost = e => {
-    props.updatePost(e.currentTarget.value);
-  }
   return (
     <div className={st.main}>
       My post
-        <div className={st.add}>
-        <textarea className={st.addPost} value={props.newPostContent} onChange={updatePost} />
-        <button className={st.addButton} onClick={addPs} >Добавить пост</button>
-      </div>
+        <AddPostForm onSubmit={addPs}/>
       <div>
         {
           props.items.items.map(item => <Item key={item.id} text={item.text} />)
@@ -25,5 +28,3 @@ const OurPosts = props => {
       </div>
     </div>);
 }
-
-export default OurPosts

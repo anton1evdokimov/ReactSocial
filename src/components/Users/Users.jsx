@@ -2,8 +2,9 @@ import React from "react"
 import st from "./Users.module.css"
 import userImg from '../../img/user.jpg'
 import { NavLink } from 'react-router-dom';
-let Users = props => {
+import Paginator from "./Paginator";
 
+export default props => {
   let clickPage = (page) => {
     props.clickPage(page);
   }
@@ -13,15 +14,20 @@ let Users = props => {
   for (let i = 0; i < сount; i++) {
     page.push(i + 1);
   }
+  
   return (
     <div className={st.main}>
-      <div className={st.pages}>
-        {page.map(x => <span className={`${props.selectedPage === x && st.selected} ${st.paginator}`} onClick={() => clickPage(x)}>{x}</span>)}
-      </div>
+      <Paginator page={page} selectedPage={props.selectedPage} clickPage={clickPage}/>
+     {/* <div className={st.page}>
+        {page.map(x => <span key={x} className={`${props.selectedPage === x && st.selected} ${st.paginator} page-item`} onClick={() => clickPage(x)}>
+          {x}
+        </span>)}
+      </div>*/
+     }
       <div className={st.block}>
         {
           props.users.map(user =>
-            <>
+            <div key={user.id} style={{display:'flex'}}>
               <div className={st.leftBlock}>
                 <div>
                   <NavLink to={'/Profile/' + user.id}>
@@ -29,18 +35,18 @@ let Users = props => {
                   </NavLink>
                 </div>
                 {user.followed ?
-                  <button onClick={() => { props.unfollow(user.id) }}>Unfollow</button> :
-                  <button onClick={() => { props.follow(user.id) }}>Follow</button>
+                  <button disabled={props.followingInProgress.some(id => id === user.id)} onClick={() => { props.unfollow(user.id) }}>
+                    Unfollow</button> :
+                  <button disabled={props.followingInProgress.some(id => id === user.id)} onClick={() => { props.follow(user.id); }}>
+                    Follow</button>
                 }
               </div>
               <div className={st.rightBlock}>
                 <div>name - {user.name}</div>
                 <div>status - {user.status}</div>
               </div>
-            </>)
+            </div>)
         }
       </div>
     </div>);
 }
-
-export default Users

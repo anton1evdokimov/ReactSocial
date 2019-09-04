@@ -3,8 +3,7 @@ import st from './Header.module.css'
 import image from '../../img/gerb.png'
 import { NavLink } from 'react-router-dom'
 
-const Header = (props) => {
-    debugger;
+export default props => {
     return <header className={st.header}>
         <img src={image} alt="Герб России" />
         {props.account.isAuth ?
@@ -13,5 +12,3 @@ const Header = (props) => {
         }
     </header>;
 }
-
-export default Header;

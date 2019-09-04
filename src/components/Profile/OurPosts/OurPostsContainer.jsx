@@ -1,14 +1,13 @@
 import OurPosts from "./OurPosts"
 
-import { updateNwPsActionCreator, addPsActionCreator } from "../../../store/postReducer"
+import { addPsActionCreator } from "../../../store/postReducer"
 import { connect } from "react-redux";
 
 let mapStateToProps = state => ({ items: state.postPage, newPostContent: state.postPage.newPostContent });
 
 let mapDispatchToProps = dispatch => (
   {
-    updatePost: (value) => dispatch(updateNwPsActionCreator(value)),
-    addPs: () => dispatch(addPsActionCreator())
+    addPs: post => dispatch(addPsActionCreator(post))
   }
 );
 

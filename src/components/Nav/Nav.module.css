@@ -11,6 +11,12 @@
   text-decoration: none;
 }
 
+.point:hover{
+  text-decoration: none;
+  font-weight: 700; 
+  color:black; 
+}
+
 .current{
-  color:rgb(26, 44, 26); 
+  color: aliceblue;
 }
