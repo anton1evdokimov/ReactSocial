@@ -32,7 +32,7 @@ const postReducer = (state = initState, action) => {
                                 items: [newItem, ...state.items]
                         };
                 }
-                
+
                 case SET_USER_PROFILE: {
                         return {
                                 ...state,
@@ -49,25 +49,21 @@ const postReducer = (state = initState, action) => {
         }
 }
 
-export const getUserProfile = id => dispatch => {
-        usersAPI.setProfile(id).then(data => {
-                dispatch(setUserProfile(data));
-        });
+export const getUserProfile = id => async (dispatch) => {
+        let data = await usersAPI.setProfile(id);
+        dispatch(setUserProfile(data));
 }
 
-export const getUserStatus = id => dispatch => {
-        profileAPI.getStatus(id).then(data => {
-                debugger
-                dispatch(setStatus(data));
-        });
+export const getUserStatus = id => async (dispatch) => {
+        let data = await profileAPI.getStatus(id)
+        dispatch(setStatus(data));
 }
 
-export const updateUserStatus = status => dispatch => {
-        profileAPI.updateStatus(status).then(data => {
-                if (data.resultCode == 0) {
-                        dispatch(setStatus(status));
-                }
-        });
+export const updateUserStatus = status => async (dispatch) => {
+        let data = await profileAPI.updateStatus(status)
+        if (data.resultCode == 0) {
+                dispatch(setStatus(status));
+        }
 }
 
 export default postReducer;

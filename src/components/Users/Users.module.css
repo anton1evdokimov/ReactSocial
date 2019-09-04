@@ -1,23 +1,23 @@
-.main{
- padding: 18px;
- display: grid;
- 
- grid-template-areas: "c" "b";
- 
- grid-template-columns: 12fr;
-}
-.pages{
-grid-area: c;
+.main {
+    padding: 18px;
+    display: grid;
+    grid-template-areas: "c" "b";
+    grid-template-columns: 12fr;
 }
 
-.block{
+.pages {
+    grid-area: c;
+}
+
+.block {
     grid-area: b;
     display: flex;
     flex-wrap: wrap;
     width: 1005px;
 }
-.leftBlock{
-   border:1px solid rgb(84, 116, 10);
+
+.leftBlock {
+    border: 1px solid rgb(84, 116, 10);
     background-color: rgb(253, 249, 249);
     width: 300px;
     padding: 9px;
@@ -25,34 +25,35 @@ grid-area: c;
     border-radius: 3px;
     display: flex;
 }
-.rightBlock{
+
+.rightBlock {
     width: 500px;
     padding: 9px;
     margin: 3px 9px;
 }
 
-.selected{
-    font-weight: 900;   
+.selected {
+    font-weight: 900;
 }
 
-.paginator{
+.paginator {
     height: 50px;
     border-radius: 15px;
     cursor: pointer;
 }
 
-.paginator a{
+.paginator a {
     color: black;
 }
 
-button{
+button {
     width: 90px;
     margin: 3px 9px;
     border-radius: 3px;
     cursor: pointer;
 }
 
-.userPhoto{
+.userPhoto {
     height: 40px;
     border-radius: 12px;
 }

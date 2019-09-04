@@ -1,18 +1,18 @@
-.header{
-    grid-area: h;
-    padding: 3px 12px;
-    background-color: rgb(208, 245, 208);
-    display: flex;
-    justify-content: space-between;
-  }
+.header {
+  grid-area: h;
+  padding: 3px 12px;
+  background-color: rgb(208, 245, 208);
+  display: flex;
+  justify-content: space-between;
+}
 
-  .header img{
-    width: 130px;
-    padding-left: 12px;
-  }
+.header img {
+  width: 130px;
+  padding-left: 12px;
+}
 
-  .account{
-    vertical-align: center;
-color:black;
-text-decoration: none;
-  }
+.account {
+  vertical-align: center;
+  color: black;
+  text-decoration: none;
+}

@@ -73,7 +73,7 @@ const usersReducer = (state = initState, action) => {
                                 isFetching: action.isFetching
                         };
                 }
-                case SET_IS_FOLLOW_PROGRESS: {                        
+                case SET_IS_FOLLOW_PROGRESS: {
                         return {
                                 ...state,
                                 followingInProgress: action.isFollowing ?
@@ -85,12 +85,12 @@ const usersReducer = (state = initState, action) => {
         }
 }
 
-export const getUsersTC = (currentPage, pageSize) => (dispatch) => {        
+export const getUsersTC = (currentPage, pageSize) => (dispatch) => {
         dispatch(setIsFetching(true));
-        if (currentPage) {                
+        if (currentPage) {
                 dispatch(selectedPage(currentPage));
         }
-        usersAPI.getUsers(currentPage, pageSize).then(res => {                
+        usersAPI.getUsers(currentPage, pageSize).then(res => {
                 dispatch(setUsers(res.items));
                 dispatch(setTotalSize(res.totalCount));
                 dispatch(setIsFetching(false))
@@ -98,23 +98,23 @@ export const getUsersTC = (currentPage, pageSize) => (dispatch) => {
 }
 
 export const follow = (id) => (dispatch) => {
-        
+
         dispatch(setFollowingProgress(true, id));
         followAPI.follow(id).then(result => {
-          if (result === 0) {
-                dispatch(followSuccess(id))
-          }
-          dispatch(setFollowingProgress(false, id));
+                if (result === 0) {
+                        dispatch(followSuccess(id))
+                }
+                dispatch(setFollowingProgress(false, id));
         });
 }
 
 export const unfollow = (id) => (dispatch) => {
         dispatch(setFollowingProgress(true, id));
         followAPI.unfollow(id).then(result => {
-          if (result === 0) {
-                dispatch(unfollowSuccess(id))
-          }
-          dispatch(setFollowingProgress(false, id));
+                if (result === 0) {
+                        dispatch(unfollowSuccess(id))
+                }
+                dispatch(setFollowingProgress(false, id));
         })
 }
 

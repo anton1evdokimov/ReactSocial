@@ -36,15 +36,15 @@ const accountReducer = (state = initState, action) => {
                 default: return state;
         }
 }
-export const getAccount = () => (dispatch) => {
+
+export const getAccount = () => async (dispatch) => {
         dispatch(setIsFetching(true));
-        authAPI.getMe().then(res => {
-                if (res.resultCode === 0) {
-                        let { id, email, login } = res.data;
-                        dispatch(setAccount(id, email, login));
-                        dispatch(setIsFetching(false));
-                }
-        });
+        let res = await authAPI.getMe();
+        if (res.resultCode === 0) {
+                let { id, email, login } = res.data;
+                dispatch(setAccount(id, email, login));
+                dispatch(setIsFetching(false));
+        }
 }
 
 export default accountReducer;

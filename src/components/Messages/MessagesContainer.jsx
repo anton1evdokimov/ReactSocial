@@ -6,7 +6,7 @@ let mapStateToProps = state => ({ items: state.messagePage });
 
 let mapDispatchToProps = dispatch => (
     {
-        updateMessage: (value) => dispatch(updateNwMsActionCreator(value)),
+        updateMessage: value => dispatch(updateNwMsActionCreator(value)),
         addMessage: () => dispatch(addMsActionCreator())
     }
 );
