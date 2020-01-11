@@ -1,21 +1,21 @@
-.main{
- padding: 18px;
+.main {
+    padding: 18px;
 }
 
-.add{
+.add {
     display: grid;
     grid-template-columns: 9fr 3fr;
 }
 
-.addPost{
+.addPost {
     width: 90%;
     min-height: 153px;
     margin: 9px 12px;
     background-color: #eee;
 }
 
-.addButton{
-    height: 100px;
+.addButton {
+    height: 153px;
     margin: 9px 12px;
     border-radius: 15px;
     cursor: pointer;

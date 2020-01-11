@@ -3,10 +3,10 @@ import st from './Profile.module.css'
 
 export default class ProfileStatus extends React.Component {
     constructor(props) {
-        super(props);
+        super(props);      
         this.state = {
             editMode: false,
-            text: this.props.status,
+            text: localStorage.getItem('status') || "1" ,
             status: {}
         }
     }
@@ -28,7 +28,7 @@ export default class ProfileStatus extends React.Component {
     }
     resetEditMode = () => {
         this.setState({ editMode: false });
-        this.props.updateUserStatus()
+        localStorage.setItem('status', this.state.text);
     }
    
     onInput = e => {
@@ -42,7 +42,7 @@ export default class ProfileStatus extends React.Component {
                         autoFocus={true} onChange={this.onInput} className={st.statusInput} />
                     :
                     <div className={st.statusLabel} onClick={this.setEditMode}>
-                        <span>{this.state.text}</span>
+                        Мой статус: <span>{this.state.text}</span>
                     </div>
             }
         </>

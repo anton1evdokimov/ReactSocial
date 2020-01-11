@@ -17,11 +17,12 @@ export default () =>  (
             <HeaderContainer />
             <Nav />
             <Switch>
-            <Route path='/Profile/:id?' render={() => <ProfileContainer />} />
-            <Route path='/Messages' render={() => <MessagesContainer />} />
-            <Route path='/Users' render={() => <UsersContainer />} />
-            <Route path='/Login' render={() => <Login />} />
-            <Route component={NotFound} />
+            <Route path='/Profile/:id?' component={ProfileContainer} />
+            <Route path='/Messages' component={MessagesContainer} />
+            <Route path='/Users' component={UsersContainer} />
+            <Route path='/Login' component={Login} />
+            <Route path='/' component={ProfileContainer} exact/>
+            <Route path='*' component={NotFound}/>
             </Switch>
         </BrowserRouter>
       </Provider>

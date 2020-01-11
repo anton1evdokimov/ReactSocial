@@ -8,12 +8,15 @@
     padding: 12px;
 }
 
-.statusLabel{
-    cursor: pointer;
-    margin: 12px 0;
-}
-.statusInput{
+.statusLabel,.statusInput{
     margin: 12px 0;
     border-radius: 9px;
     display: block;
+    padding: 3px;
+} 
+.statusLabel{
+    cursor: pointer;
+    background-color: #eee;
+    border-radius: 9px;
+    width: 300px;
 }

@@ -5,7 +5,7 @@
     color: #deb887;
 }
 
-button:focus {
+button:focus, * {
     outline: none;
 }
 
