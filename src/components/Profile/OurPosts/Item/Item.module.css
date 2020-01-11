@@ -1,17 +1,23 @@
-.nav{
-  grid-area: n;
-  background-color: #deb887
+.avatar {
+    width: 50px;
+    border-radius: 9px;
 }
 
-.point{
-  color:darkgreen;
+.item {
+    display: flex;
+    justify-content: space-between;
+    width: 500px;
+    align-items: center;
+    border-bottom: .5px solid #eee;
+    padding-bottom: 5px;
 }
 
-.current{
-  color:darkseagreen; 
+.btn {
+    height: 33px;
+    border-radius: 8px;
 }
 
-.avatar{
-width: 50px;
-border-radius: 9px;
+.text {
+    flex-grow: 1;
+    padding-left: 3px;
 }

@@ -21,13 +21,20 @@ export default () => {
     setPosts(temp);
   }
 
+  const handleDelete = id => {
+    let temp = JSON.parse(localStorage.getItem('posts'));
+    temp = temp.filter(i => i.id !== id);
+    localStorage.setItem('posts', JSON.stringify(temp));
+    setPosts(temp);
+  }
+
   return (
     <div className={st.main}>
       Мои посты
         <AddPostForm onSubmit={addPs} />
       <div>
         {
-          posts.map(item => <Item key={item.id} text={item.text} />)
+          posts.map(item => <Item key={item.id} text={item.text} onDelete={() => handleDelete(item.id)} />)
         }
       </div>
     </div>);
