@@ -1,4 +1,16 @@
 .main {
     display: grid;
     grid-template-columns: 3fr 9fr;
+    padding: 9px;
+}
+
+.addMessage{
+    flex-grow: 1;
+    min-height: 300px;
+}
+
+.add{
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
 }

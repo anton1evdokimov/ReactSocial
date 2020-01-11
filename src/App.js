@@ -11,9 +11,7 @@ import HeaderContainer from './components/Header/HeaderContainer';
 import NotFound from './components/common/NotFound';
 import Login from './components/Login/Login';
 
-class App extends React.Component {
-  render() {
-    return (
+export default () =>  (
       <Provider store={store}>
         <BrowserRouter>
             <HeaderContainer />
@@ -28,7 +26,3 @@ class App extends React.Component {
         </BrowserRouter>
       </Provider>
     );
-  }
-}
-
-export default App;
